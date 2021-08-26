@@ -1,0 +1,110 @@
+.main_div{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(73, 165, 196);
+}
+
+.main_div .center_div{
+    position: relative;
+    height: 500px;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color:  lightblue;
+    overflow: hidden;
+}
+.main_div .center_div i{
+    color:rgb(89, 168, 218);
+    margin:0 5px;
+}
+.main_div .center_div input{
+    width: 70%;
+    padding: 0.7rem;
+    border-radius: 25px;
+    outline: none;
+    margin:2rem 0;
+    border: none;
+}
+.main_div .center_div input:focus{
+    border:3px solid rgb(46, 103, 168, 0.5);
+    transition: 0.2s ease-in-out;
+}
+.main_div .center_div .temp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main_div .center_div .temp .city{
+    text-transform: capitalize;
+}
+@keyframes pulse {
+    0%, 100% {
+      color: rgba(241, 247, 248);
+    }
+    50% {
+      color:rgb(89, 171, 226);
+    }
+  }
+  
+@keyframes nudge {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    50%{
+        transform: translate(-30px,0);
+    }
+    
+   
+  }
+.main_div .center_div .temp i{
+    color: rgb(99, 99, 233);
+    margin:0 10px;
+    animation: pulse 3s ease infinite alternate, 
+    nudge 3s linear infinite alternate;
+    
+}
+.center_div svg{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+svg path{
+    width: 100%;
+	animation:pathAnim 7s; 
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+svg path:nth-child(2){
+	animation-delay: 1s
+}
+svg path:nth-child(3){
+	animation-delay: 3s
+}
+svg path:nth-child(4){
+	animation-play-state: paused;
+}
+
+@keyframes pathAnim{
+	0%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+	25%{
+		d: path("M0,100	C220,100,440,292,660,292 C880,292,1100,100,1320,100	L1320 500 L0 500");
+	}
+	50%{
+		d: path("M0,192	C220,290,440,290,660,192 C880,100,1100,100,1320,192	L1320 500 L0 500");
+	}
+	75%{
+		d: path("M0,292	C220,292,440,100,660,100 C880,100,1100,292,1320,292	L1320 500 L0 500");
+	}
+	100%{
+		d: path("M0,192	C220,100,440,100,660,192 C880,290,1100,290,1320,192	L1320 500 L0 500");
+	}
+
+}
